@@ -6,7 +6,7 @@
             <h1 class="text-primary">Product List</h1>
         </div>
         <div class="col text-end pt-1">
-            <a asp-action="Create" class="btn btn-outline-info">Create New Product</a>
+            <a asp-action="ProductCreate" class="btn btn-outline-info">Create New Product</a>
         </div>
 
     </div>
@@ -37,6 +37,14 @@
                     </td>
                     <td>
                         @item.Price
+                    </td>
+                    <td>
+                        <a asp-action="ProductEdit" class="btn btn-success" asp-route-productid="@item.ProductId">
+                            Edit
+                        </a>
+                        <a asp-action="ProductDelete" class="btn btn-danger" asp-route-productid="@item.ProductId">
+                            Delete
+                        </a>
                     </td>
                 </tr>
             }

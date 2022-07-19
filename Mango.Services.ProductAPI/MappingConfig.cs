@@ -8,12 +8,11 @@ namespace Mango.Services.ProductAPI
     {
         public static MapperConfiguration RegisterMaps()
         {
-            var mapperConfig = new MapperConfiguration(config =>
-             {
-                 config.CreateMap<ProductDto, Product>();
-                 config.CreateMap<Product, ProductDto>();
-             });
-            return mapperConfig;
+            var mappingConfig = new MapperConfiguration(config =>
+              {
+                  config.CreateMap<Product, ProductDto>().ReverseMap();
+              });
+            return mappingConfig;
         }
     }
 }
